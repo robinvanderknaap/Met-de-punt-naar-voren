@@ -1,0 +1,15 @@
+﻿@using Orchard.ContentManagement;
+@{
+    IEnumerable<object> blogPosts =
+        Model.ContentItems.ContentItems;
+}
+<h4>Other blogs</h4>
+<ul class="content-items">
+@foreach (dynamic post in blogPosts) {
+    string title = post.Title;
+    ContentItem item = post.ContentItem;
+    <li class="content-item-summary">
+        @Html.ItemDisplayLink(title, item)
+    </li>
+}
+</ul>

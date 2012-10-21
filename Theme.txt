@@ -1,0 +1,6 @@
+Name: Met De Punt Naar Voren
+Author: Robin van der Knaap
+Website: http://metdepuntnaarvoren.nl
+Description: Theme specifically created for metdepuntnaarvoren.nl. Based on Twitter Bootstrap.
+Version: 1.0
+Zones: SideBar

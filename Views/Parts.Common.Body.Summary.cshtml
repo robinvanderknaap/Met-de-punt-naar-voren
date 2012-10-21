@@ -1,0 +1,21 @@
+﻿@*Overrides default blog post body summary*@
+@{ 
+    Orchard.ContentManagement.ContentItem contentItem = Model.ContentPart.ContentItem;
+    string bodyHtml = Model.Html.ToString();
+
+    var start = bodyHtml.IndexOf("<summary>");
+    var end = bodyHtml.IndexOf("</summary>");
+
+    HtmlString body;
+    
+    if (start >= 0 && end > start)
+    {
+        var summary = bodyHtml.Substring(start, end + 10 - start);
+        body = new HtmlString(summary.Replace(Environment.NewLine, "</p>" + Environment.NewLine + "<p>"));
+    }
+    else
+    {
+        body = new HtmlString(Html.Excerpt(bodyHtml, 400).ToString().Replace(Environment.NewLine, "</p>" + Environment.NewLine + "<p>")); 
+    }
+}
+<p>@body @Html.ItemDisplayLink(T("Read more").ToString(), contentItem)</p>

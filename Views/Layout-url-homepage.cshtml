@@ -1,0 +1,42 @@
+﻿@{
+    AppendMeta("viewport", "width=device-width, initial-scale=1.0", "");
+    Script.Require("ShapesBase");
+    Style.Include("bootstrap.min.css");
+    Style.Include("bootstrap-responsive.min.css");
+    Style.Include("style.css");
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+    WorkContext.Layout.ContactInfo.Add(New.ContactInfo(), "5");
+    WorkContext.Layout.Footer.Add(New.Footer(), "5");
+}
+
+<div id="header_background" style="height: 40px;"></div>
+<div class="container">
+    <div id="header" class="row" style="height: 40px;">
+    </div>
+
+    <div id="main" class="row">
+        <div class="span12">
+            <div class="hero-unit clearfix">
+                <img style="padding: 10px 50px 30px 0px; float:left;" src="@Url.Content(Html.ThemePath(WorkContext.CurrentTheme, "/Content/Images/cigarette.png"))" alt="" />
+                <h1>Met de punt naar voren</h1>
+                <p>
+                    Blog about software development
+                </p>
+            </div>
+        </div>
+        <div class="span8">
+            @Display(Model.Content)
+        </div>
+        <div id="contactInfo" class="span4 clearfix">
+            <div class="well well-small clearfix">
+                @Zone(Model.ContactInfo)
+            </div>
+        </div>
+        @Zone(Model.Footer)
+    </div>
+</div>
+@{
+    Script.Include("bootstrap.min.js");
+}

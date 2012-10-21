@@ -1,0 +1,40 @@
+﻿@{
+    AppendMeta("viewport", "width=device-width, initial-scale=1.0", "");
+    Script.Require("ShapesBase");
+    Style.Include("bootstrap.min.css");
+    Style.Include("bootstrap-responsive.min.css");
+    Style.Include("style.css");
+
+    Func<dynamic, dynamic> Zone = x => Display(x); // Zone as an alias for Display to help make it obvious when we're displaying zones
+
+    WorkContext.Layout.ContactInfo.Add(New.ContactInfo(), "5");
+    WorkContext.Layout.Footer.Add(New.Footer(), "5");
+}
+
+<div id="header_background"></div>
+<div class="container">
+    <div id="header" class="row">
+        <div id="branding" class="span12">
+            <h1>
+                <a href="@Href("~/")"><strong>.</strong>@T("MET DE PUNT NAAR VOREN")</a>
+            </h1>
+            
+        </div>
+    </div>
+
+    <div id="main" class="row">
+        <div class="span8">
+            @Display(Model.Content)
+        </div>
+        <div id="contactInfo" class="span4 clearfix">
+            <div class="well well-small clearfix">
+                @Zone(Model.ContactInfo)
+                @Zone(Model.SideBar)
+            </div>
+        </div>
+        @Zone(Model.Footer)
+    </div>
+</div>
+@{
+    Script.Include("bootstrap.min.js");
+}
