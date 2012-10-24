@@ -17,9 +17,6 @@ h2 {
 li {
     line-height: 25.6px;
 }
-.syntaxhighlighter {
-    overflow: hidden !important;
-}
 #header {
     height: 80px;
     margin-bottom: 20px;
@@ -32,15 +29,6 @@ li {
     position: absolute;
     z-index: -1;
 }
-@media (max-width: 767px) {
-    #header_background {
-        margin-right: -20px;
-        margin-left: -20px;
-    }
-}
-#branding {
-    margin-top: 10px;
-}
 #header a, #header a:hover {
     color: #fff;
     text-decoration: none;
@@ -49,6 +37,41 @@ li {
     color: #fff;
     font-size: 24px;
 }
+#branding {
+    margin-top: 10px;
+}
+#header_background.homepage, .homepage #header {
+    height: 0px;
+}
+.homepage #branding {
+    display: none;
+}
+@media (max-width: 767px) {
+    #header_background {
+        margin-right: -20px;
+        margin-left: -20px;
+    }
+    .homepage .hero-unit {
+        display: none;
+    }
+    .homepage #branding {
+        display: block;
+    }
+    #header_background.homepage, .homepage #header {
+    height: 40px;
+    }
+    #header_background, #header {
+        height: 40px;
+    }
+    #header h1 {
+        font-size: 18px;
+    }
+    #branding, #branding h1 {
+        line-height: 22px;
+        white-space: nowrap;
+    }
+}
+
 ul.blog-posts {
     list-style-type: none;
     margin: 0px;
@@ -85,13 +108,15 @@ ul.blog-posts summary {
 .zone-side-bar ul {
     list-style-type: circle;
 }
+#footer {
+    margin-top: 20px;
+}
 .addthis_toolbox {
     margin: 10px 0px 20px 0px;
 }
 #disqus_thread {
     margin-top: 30px;
 }
-#footer {
-    margin-top: 20px;
+.syntaxhighlighter {
+    overflow: hidden !important;
 }
-
