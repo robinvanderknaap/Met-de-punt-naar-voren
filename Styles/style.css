@@ -2,6 +2,7 @@
     font-family: "Georgia","Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
     line-height: 25.6px;
     color: #2a2a2a;
+    -webkit-font-smoothing: antialiased;
 }
 h1,h2,h3,h4,h5,h6 {
     font-family: "news-gothic-std-1","news-gothic-std-2","Lucida Grande","Helvetica";
