@@ -8,7 +8,9 @@ This theme is specifically created for metdepuntnaarvoren.nl.
 - Add the theme to the themes directory
 - Start site
 - Go through initial setup
+- Disable module 'Comments'. Disqus comments will be used instead, this is already handled in the theme.
 - Download 'Syntax Highlighter' module from the Gallery
 - Download 'Designer Tools' module to make your life easier when altering the theme. Be sure to disable this module in production!
+- Add recent blog posts widget to SideBar zone. (Name OtherBlogs, hide title, Number of displays 0 (will show all)
 
 You are up and running. I prefer to disable all rich text editors, so you can just type plain html in an text area when writing blog posts.
